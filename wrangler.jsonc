@@ -3,26 +3,30 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "northwind-full-stack",
-  "compatibility_date": "2025-04-04",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "main": "@astrojs/cloudflare/entrypoints/server",
-  "observability": {
-    "enabled": true,
-    "logs": {
-      "invocation_logs": false,
-      "head_sampling_rate": 1
-    }
-  },
-  "placement": {
-    "mode": "smart"
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "northwind",
-      "database_id": "f5d8c7d3-0bbf-4090-9665-c443336e9032"
-    }
-  ]
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "northwind-full-stack",
+	"compatibility_date": "2025-04-04",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"main": "@astrojs/cloudflare/entrypoints/server",
+	"observability": {
+		"enabled": true,
+		"logs": {
+			"invocation_logs": false,
+			"head_sampling_rate": 1
+		}
+	},
+	"placement": {
+		"mode": "smart"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "northwind",
+			"database_id": "f5d8c7d3-0bbf-4090-9665-c443336e9032",
+			"migrations_dir": "../../migrations"
+		}
+	]
 }
